@@ -1,9 +1,10 @@
 import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.scss";
+import ModalsPupupContainer from "./components/layout/ModalsPupupContainer";
 import Navbar from "./components/layout/Navbar";
 import TasksList from "./components/todos/TaskList";
-import { fetchTodoData, sendtodoData } from "./store/todo-actions";
+import { fetchTodoData, sendtodoData } from "./store/todo/todo-actions";
 
 let isInitial = true;
 function App() {
@@ -32,8 +33,9 @@ function App() {
 
   return (
     <Fragment>
+      <ModalsPupupContainer />
       <Navbar />
-      <div className='lists'>
+      <div className="lists">
         {categoryList.map((category) => (
           <TasksList category={category} tasksList={taskStore.tasks} />
         ))}

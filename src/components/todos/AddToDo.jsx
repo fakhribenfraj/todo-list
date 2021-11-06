@@ -1,23 +1,20 @@
-import AddToDoModal from "./AddToDoModal";
 import { FaPlus } from "react-icons/fa";
 
-import { useState, Fragment } from "react";
+import { Fragment } from "react";
+import { modalActions } from "../../store/modal/modal-slice";
+import { useDispatch } from "react-redux";
 
 const AddToDo = () => {
-  const [addStatus, setAddStatus] = useState(false);
+  const dispatch = useDispatch();
   const addTaskHandler = () => {
-    setAddStatus((state) => !state);
-  };
-  const closeModalHandler = () => {
-    setAddStatus(false);
+    dispatch(modalActions.showAddModal(true));
   };
 
   return (
     <Fragment>
-      <div  onClick={addTaskHandler}>
+      <div onClick={addTaskHandler}>
         <FaPlus />
       </div>
-      {addStatus && <AddToDoModal onCloseModal={closeModalHandler} />}
     </Fragment>
   );
 };

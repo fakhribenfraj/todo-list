@@ -1,7 +1,7 @@
 import classes from "./Task.module.scss";
 import { MdDelete } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { todoActions } from "../../store/todo-slice";
+import { todoActions } from "../../store/todo/todo-slice";
 const Task = (props) => {
   const dispatch = useDispatch();
   const handleCheck = (event) => {

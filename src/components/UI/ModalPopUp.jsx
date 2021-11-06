@@ -1,15 +1,33 @@
-import { useState } from "react";
-import classes from "./ModalPopUp.module.scss";
-const ModalPopUp = (props) => {
-  const [status, setStatus] = useState(false);
+import React, { Fragment } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { modalActions } from "../../store/modal/modal-slice";
+import Card from "./Card";
+import classes from "./ModalPopup.module.scss";
+
+const ModalPopup = (props) => {
+  const modalStore = useSelector((state) => state.modal);
+  const dispatch = useDispatch();
   const closeModalHandler = () => {
-    setStatus(false);
+    dispatch(modalActions.showAddModal(false));
   };
+  //   const [status, setStatus] = useState(false);
+  //   const closeModalHandler = () => {
+  //     setStatus(false);
+  //   };
+  console.log(modalStore.statuses.addStatus);
   return (
-    status && <div>
-      <div className={classes.backdrop} onClick={closeModalHandler} />
-      <Card className={classes.modal}>{props.children}</Card>
-    </div>
+    <Fragment>
+      {modalStore.statuses.addStatus && (
+        <div>
+          <div className={classes.backdrop} onClick={closeModalHandler} />
+          <Card className={classes.modal}>
+            {React.cloneElement(props.children, {
+              onCloseModal: closeModalHandler,
+            })}
+          </Card>
+        </div>
+      )}
+    </Fragment>
   );
 };
-export default ModalPopUp;
+export default ModalPopup;

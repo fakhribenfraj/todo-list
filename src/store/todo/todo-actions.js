@@ -1,5 +1,6 @@
-import { uiActions } from "./ui-slice";
+import { uiActions } from "../UI/ui-slice";
 import { todoActions } from "./todo-slice";
+
 const databaseUrl =
   "https://todoist-6fef2-default-rtdb.europe-west1.firebasedatabase.app/data.json";
 
