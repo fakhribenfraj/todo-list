@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+.navbar{
+    background-color: $color-primary;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    padding: 1rem 3rem;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    ul{
+        list-style: none;
+        display: flex;
+        li{
+            padding: 0 1rem;
+            font-size: 2rem;
+        }
+    }
+    .icon{
+        font-size: 3.5rem;
+    }
+}

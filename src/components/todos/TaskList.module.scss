@@ -1,0 +1,11 @@
+.list {
+  width: 50%;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+  &__heading {
+    font-weight: 700;
+  }
+  &__content {
+    list-style: none;
+  }
+}

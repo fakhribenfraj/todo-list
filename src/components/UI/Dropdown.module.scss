@@ -1,0 +1,31 @@
+.dropdown {
+  display: flex;
+  color: gray;
+  position: relative;
+  flex-direction: column;
+  &__list {
+    position: absolute;
+    width: 100px;
+    z-index: 21;
+    top: 100%;
+    left: -50%;
+    align-self: center;
+    border: solid gray;
+    display: flex;
+    flex-direction: column;
+    li {
+      background-color: white;
+    }
+    li:nth-child(2n) {
+      background-color: aliceblue;
+    }
+  }
+}
+.clickOut {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+}
