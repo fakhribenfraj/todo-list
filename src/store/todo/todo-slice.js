@@ -26,17 +26,13 @@ const todoSlice = createSlice({
         existingTask.checked = action.payload.checked;
       }
     },
-    removeTaskFromList(state, action) {
-      // const id = action.payload;
-      // const existingItem = state.items.find((item) => item.id === id);
-      // state.totalQuantity--;
-      // state.changed = true;
-      // if (existingItem.quantity === 1) {
-      //   state.items = state.items.filter((item) => item.id !== id);
-      // } else {
-      //   existingItem.quantity--;
-      //   existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
-      // }
+    deleteTaskFromList(state, action) {
+      const existingTask = state.tasks.find(
+        (task) => task.id === action.payload.id
+      );
+      if (existingTask) {
+        state.tasks = state.tasks.filter((task) => task.id !== existingTask.id);
+      }
     },
   },
 });

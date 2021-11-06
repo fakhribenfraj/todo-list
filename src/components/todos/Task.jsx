@@ -12,9 +12,20 @@ const Task = (props) => {
       })
     );
   };
+
+  const handleDeleteTask = (event) => {
+    dispatch(
+      todoActions.deleteTaskFromList({
+        id: props.task.id,
+      })
+    );
+  };
   return (
-    <li key={props.task.id} className={classes.task}>
-      <label className={classes.task__body}>
+    <li
+      key={props.task.id}
+      className={classes.task}
+    >
+      <label className={props.task.checked ? classes.task__bodyChecked : classes.task__body}>
         <div className={classes.checkIcon}>
           <input
             id={props.task.id}
@@ -27,7 +38,7 @@ const Task = (props) => {
         </div>
         <p>{props.task.value}</p>
       </label>
-      <MdDelete className={classes.buttonDelete} />
+      <MdDelete className={classes.buttonDelete} onClick={handleDeleteTask} />
     </li>
   );
 };
