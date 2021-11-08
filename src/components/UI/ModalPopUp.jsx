@@ -10,10 +10,6 @@ const ModalPopup = (props) => {
   const closeModalHandler = () => {
     dispatch(modalActions.showAddModal(false));
   };
-  //   const [status, setStatus] = useState(false);
-  //   const closeModalHandler = () => {
-  //     setStatus(false);
-  //   };
   console.log(modalStore.statuses.addStatus);
   return (
     <Fragment>
