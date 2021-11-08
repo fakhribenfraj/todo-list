@@ -1,3 +1,4 @@
+@import "../../variables.scss";
 .dropdown {
   display: flex;
   color: gray;
@@ -13,11 +14,9 @@
     border: solid gray;
     display: flex;
     flex-direction: column;
+    list-style: none;
     li {
       background-color: white;
-    }
-    li:nth-child(2n) {
-      background-color: aliceblue;
     }
   }
 }
@@ -28,4 +27,27 @@
   z-index: 20;
   top: 0;
   left: 0;
+}
+.options {
+  position: absolute;
+  width: 40rem;
+  top: 60%;
+  left: 25%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: white;
+    color: $color-text-primary;
+
+    li {
+      cursor: pointer;
+      padding: 0.3rem 5rem;
+      &:not(:last-child) {
+        border-bottom: 1px solid gray;
+      }
+    }
+  }
 }

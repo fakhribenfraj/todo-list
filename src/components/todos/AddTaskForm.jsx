@@ -9,9 +9,14 @@ import { CgCalendar } from "react-icons/cg";
 import { useDispatch } from "react-redux";
 
 import { todoActions } from "../../store/todo/todo-slice";
+import ModalPopup from "../UI/ModalPopup";
+import { useState } from "react";
 
 const AddTaskForm = (props) => {
   const dispatch = useDispatch();
+  const [optionsPopupStatus, setOptionsPopupStatus] = useState(false);
+  const [options, setOptions] = useState([]);
+
   let value = "";
   const addTaskHandler = () => {
     dispatch(
@@ -23,6 +28,17 @@ const AddTaskForm = (props) => {
       })
     );
     props.onCloseModal();
+  };
+  const toggleOptionsModalHandler = () => {
+    setOptionsPopupStatus((state) => !state);
+  };
+  const categoryClickHandler = () => {
+    setOptions(["health", "house", "meeting"]);
+    toggleOptionsModalHandler();
+  };
+  const priorityClickHandler = () => {
+    setOptions(["priority 1", "priority 2", "priority 3"]);
+    toggleOptionsModalHandler();
   };
   return (
     <form className={classes.form}>
@@ -40,12 +56,11 @@ const AddTaskForm = (props) => {
 
       <input type="date" name="schedule" id="" />
       <div className={classes.options}>
-        <Dropdown items={["health", "house", "meeting"]}>
-          <CgCalendar />
-        </Dropdown>
-        <Dropdown items={["Priority 1", "Priority 2", "Priority 3"]}>
-          <BsFlagFill />
-        </Dropdown>
+        {optionsPopupStatus && (
+          <Dropdown items={options} onCloseModal={toggleOptionsModalHandler} />
+        )}
+        <CgCalendar onClick={categoryClickHandler} />
+        <BsFlagFill onClick={priorityClickHandler} />
       </div>
       <div className={classes.button__group}>
         <Button onClick={props.onCloseModal}>cancel</Button>
