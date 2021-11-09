@@ -21,10 +21,12 @@ const Task = (props) => {
     );
   };
   return (
-    <li
-      className={classes.task}
-    >
-      <label className={props.task.checked ? classes.task__bodyChecked : classes.task__body}>
+    <li className={classes.task}>
+      <label
+        className={
+          props.task.checked ? classes.task__bodyChecked : classes.task__body
+        }
+      >
         <div className={classes.checkIcon}>
           <input
             id={props.task.id}
@@ -37,7 +39,9 @@ const Task = (props) => {
         </div>
         <p>{props.task.value}</p>
       </label>
-      <MdDelete className={classes.buttonDelete} onClick={handleDeleteTask} />
+      <div className={classes.buttonDelete} onClick={handleDeleteTask}>
+        <MdDelete />
+      </div>
     </li>
   );
 };
