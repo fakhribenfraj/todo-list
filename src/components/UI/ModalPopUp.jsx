@@ -20,6 +20,7 @@ const ModalPopup = (props) => {
             {React.cloneElement(props.children, {
               onCloseModal: props.onCloseModal,
             })}
+            {/* {props.children} */}
           </Card>
         </div>
   );

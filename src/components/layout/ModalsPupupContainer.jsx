@@ -17,7 +17,7 @@ const ModalsPupupContainer = () => {
           className={classes.addTaskPopup}
           dark={true}
         >
-          <AddTaskForm onCloseModal />
+          <AddTaskForm />
         </ModalPopup>
       )}
     </div>

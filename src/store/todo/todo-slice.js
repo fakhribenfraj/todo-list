@@ -15,6 +15,7 @@ const todoSlice = createSlice({
         id: newTask.id,
         value: newTask.value,
         category: newTask.category,
+        priority: newTask.priority,
         checked: newTask.checked,
       });
     },
