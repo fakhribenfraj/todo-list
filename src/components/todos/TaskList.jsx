@@ -12,8 +12,8 @@ const TasksList = (props) => {
       : props.tasksList.filter(
           (task) => task.category === props.category && !task.checked
         );
-  tasksList.sort((a, b)=> {
-    return a.priority - b.priority;
+  tasksList.sort((task1, task2)=> {
+    return task1.priority - task2.priority;
   });
   return (
     <Fragment>
@@ -22,7 +22,7 @@ const TasksList = (props) => {
           <h3 className={classes.list__heading}>{props.category}</h3>
           <ul className={classes.list__content}>
             {tasksList.map((task) => (
-              <Task task={task} />
+              <Task key={task.id} task={task} />
             ))}
           </ul>
         </div>

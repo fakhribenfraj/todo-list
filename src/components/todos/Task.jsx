@@ -22,7 +22,6 @@ const Task = (props) => {
   };
   return (
     <li
-      key={props.task.id}
       className={classes.task}
     >
       <label className={props.task.checked ? classes.task__bodyChecked : classes.task__body}>
