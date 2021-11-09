@@ -37,10 +37,16 @@ function App() {
       <Navbar />
       <main>
         <section className="lists">
-          {categoryList.map((category) => (
-            <TasksList category={category} tasksList={taskStore.tasks} />
+          {categoryList.map((category, index) => (
+            <TasksList
+              key={index}
+              category={category}
+              tasksList={taskStore.tasks}
+            />
           ))}
-          <TasksList category="checked" checkedTasks={checkedTasks} />
+          {checkedTasks.length > 0 && (
+            <TasksList category="checked" checkedTasks={checkedTasks} />
+          )}
         </section>
       </main>
     </Fragment>

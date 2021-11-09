@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 
 import { todoActions } from "../../store/todo/todo-slice";
 import { useState } from "react";
+import uuid from "react-uuid";
 
 const OPTIONS = [
   {
@@ -27,12 +28,11 @@ const AddTaskForm = (props) => {
   const [options, setOptions] = useState({});
   const [category, setCategory] = useState("");
   const [priority, setPriority] = useState(1);
-  console.log(priority);
-  let value = "";
+  const [value, setValue] = useState("");
   const addTaskHandler = () => {
     dispatch(
       todoActions.addTaskToList({
-        id: Math.random() * 100000000000000000,
+        id: uuid(),
         checked: false,
         value,
         category,
@@ -55,7 +55,9 @@ const AddTaskForm = (props) => {
         setCategory(options.items[id]);
         break;
       case OPTIONS[1].name:
-        setPriority(id);
+        setPriority(++id);
+        break;
+      default:
         break;
     }
   };
@@ -68,7 +70,7 @@ const AddTaskForm = (props) => {
           className={classes.input}
           autoFocus
           onChange={(event) => {
-            value = event.target.value;
+            setValue(event.target.value);
           }}
         />
       </div>

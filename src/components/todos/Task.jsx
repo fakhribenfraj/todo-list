@@ -30,7 +30,7 @@ const Task = (props) => {
           <input
             id={props.task.id}
             type="checkbox"
-            name="default"
+            name={props.task.category}
             defaultChecked={props.task.checked}
             onChange={handleCheck}
           />
