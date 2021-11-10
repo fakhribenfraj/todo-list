@@ -5,11 +5,15 @@ import { SiTodoist } from "react-icons/si";
 
 import AddToDo from "../todos/AddToDo";
 import SearchBar from "../UI/SearchBar";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <header className={classes.navbar}>
-      <SiTodoist className={classes.icon} />
+      <Link to="/" className={classes.icon}>
+        <SiTodoist />
+      </Link>
+
       <SearchBar />
       <nav>
         <ul>

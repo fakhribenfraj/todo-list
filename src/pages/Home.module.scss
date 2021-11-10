@@ -1,0 +1,59 @@
+@import "../variables.scss";
+
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 3rem;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  z-index: 5;
+}
+.logo {
+  font-size: 3.5rem;
+  color: $color-primary;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__title {
+    padding: 0 1rem;
+  }
+}
+.horizontal {
+  display: flex;
+}
+
+.link {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    color: $color-text-primary;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-bottom: 0.3rem solid transparent;
+    &:hover,
+    &:active {
+      background-color: rgba($color-primary-light, 0.1);
+      border-bottom: 0.3rem solid $color-primary;
+    }
+  }
+}
+.main {
+  padding: 1rem;
+  padding-top: 8rem;
+  text-align: center;
+  h1 {
+    white-space: pre-line;
+    font-size: 4rem;
+    line-height: 1.05;
+    font-weight: 700;
+  }
+}
