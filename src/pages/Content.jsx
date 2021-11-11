@@ -1,8 +1,6 @@
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./Content.module.scss";
-import ModalsPupupContainer from "../components/layout/ModalsPupupContainer";
-import Navbar from "../components/layout/Navbar";
 import TasksList from "../components/todos/TaskList";
 import { fetchTodoData, sendtodoData } from "../store/todo/todo-actions";
 

@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import { SiTodoist } from "react-icons/si";
 import { Link } from "react-router-dom";
 import Logo from "../components/UI/Logo";
 import classes from "./Home.module.scss";

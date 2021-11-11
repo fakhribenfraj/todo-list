@@ -11,7 +11,6 @@ import { useDispatch } from "react-redux";
 import { todoActions } from "../../store/todo/todo-slice";
 import { useState } from "react";
 import uuid from "react-uuid";
-import { useNavigate } from "react-router";
 
 const OPTIONS = [
   {
@@ -31,7 +30,7 @@ const AddTaskForm = (props) => {
   const [priority, setPriority] = useState(1);
   const [value, setValue] = useState("");
   const addTaskHandler = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     dispatch(
       todoActions.addTaskToList({
         id: uuid(),
@@ -64,7 +63,7 @@ const AddTaskForm = (props) => {
     }
   };
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={addTaskHandler}>
       <div>
         <input
           type="text"
@@ -108,7 +107,7 @@ const AddTaskForm = (props) => {
       </div>
       <div className={classes.button__group}>
         <Button onClick={props.onCloseModal}>cancel</Button>
-        <Button type="submit" className={classes.btn} onSubmit={addTaskHandler}>
+        <Button type="submit" className={classes.btn}>
           add task
         </Button>
       </div>

@@ -5,7 +5,7 @@ import App from "./pages/App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store/index";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Sign from "./pages/Sign";
 import Content from "./pages/Content";
 import Home from "./pages/Home";
