@@ -1,16 +1,15 @@
 import { Fragment } from "react";
 import { SiTodoist } from "react-icons/si";
 import { Link } from "react-router-dom";
+import Logo from "../components/UI/Logo";
 import classes from "./Home.module.scss";
+import routes from "./routes";
 const Home = () => {
   return (
     <Fragment>
       <header>
         <nav className={classes.navbar}>
-          <Link to="content" className={classes.logo}>
-            <SiTodoist />
-            <h4 className={classes.logo__title}>todoist</h4>
-          </Link>
+          <Logo link={routes.CONTENT} />
 
           <ul className={classes.horizontal}>
             <li>
@@ -41,13 +40,13 @@ const Home = () => {
           </ul>
           <ul className={classes.horizontal}>
             <li>
-              <Link to="login" className={classes.link}>
+              <Link to={routes.LOGIN} className={classes.link}>
                 Log In
               </Link>
             </li>
             <li>
-              <Link to="Users/showRegister" className={classes.link}>
-                Sign Up
+              <Link to={routes.REGISTER} className={classes.link}>
+                Register
               </Link>
             </li>
           </ul>

@@ -5,7 +5,7 @@ import classes from './Button.module.scss';
 const Button = (props) => {
   return (
     <button
-      className={props.bg === 'primary'?`${classes.button} ${classes.buttonPrimary}`:classes.button}
+      className={`${classes.button} ${props.className}`}
       type={props.type || 'button'}
       onClick={props.onClick}
     >

@@ -41,4 +41,10 @@
 .button__group {
   justify-self: end;
 }
+.btn {
+  color: white;
+  background: $color-primary;
+  border-color: $color-primary;
+  margin: 0 1rem;
+}
 

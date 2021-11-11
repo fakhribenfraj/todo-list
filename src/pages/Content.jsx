@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import classes from"./Content.module.scss";
+import classes from "./Content.module.scss";
 import ModalsPupupContainer from "../components/layout/ModalsPupupContainer";
 import Navbar from "../components/layout/Navbar";
 import TasksList from "../components/todos/TaskList";
@@ -32,24 +32,20 @@ function Content() {
   const checkedTasks = taskStore.tasks.filter((task) => task.checked);
 
   return (
-    <Fragment>
-      <ModalsPupupContainer />
-      <Navbar />
-      <main>
-        <section className={classes.lists}>
-          {categoryList.map((category, index) => (
-            <TasksList
-              key={index}
-              category={category}
-              tasksList={taskStore.tasks}
-            />
-          ))}
-          {checkedTasks.length > 0 && (
-            <TasksList category="checked" checkedTasks={checkedTasks} />
-          )}
-        </section>
-      </main>
-    </Fragment>
+    <main>
+      <section className={classes.lists}>
+        {categoryList.map((category, index) => (
+          <TasksList
+            key={index}
+            category={category}
+            tasksList={taskStore.tasks}
+          />
+        ))}
+        {checkedTasks.length > 0 && (
+          <TasksList category="checked" checkedTasks={checkedTasks} />
+        )}
+      </section>
+    </main>
   );
 }
 

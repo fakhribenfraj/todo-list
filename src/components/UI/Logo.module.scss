@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+.logo {
+  font-size: 3.5rem;
+  color: $color-primary;
+  width: min-content;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__title {
+    padding: 0 1rem;
+  }
+}

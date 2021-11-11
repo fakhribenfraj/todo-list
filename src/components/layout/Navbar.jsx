@@ -6,13 +6,12 @@ import { SiTodoist } from "react-icons/si";
 import AddToDo from "../todos/AddToDo";
 import SearchBar from "../UI/SearchBar";
 import { Link } from "react-router-dom";
+import Logo from "../UI/Logo";
 
 const Navbar = () => {
   return (
     <header className={classes.navbar}>
-      <Link to="/" className={classes.icon}>
-        <SiTodoist />
-      </Link>
+      <Logo link="/" className={classes.icon} small={true}/>
 
       <SearchBar />
       <nav>

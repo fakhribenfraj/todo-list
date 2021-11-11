@@ -1,23 +1,16 @@
 @import "../../variables.scss";
 .button {
   font: inherit;
-  color: black;
-  border: 1px solid gray;
-  padding: 0.25rem 1rem;
-  margin: 1rem .5rem;
+  border: 1px solid transparent;
+  padding: 0.5rem 1.2rem;
   border-radius: .4rem;
   cursor: pointer;
   &:focus {
     outline: none;
   }
-  &Primary {
-    color: white;
-    background: $color-primary;
-    border-color: $color-primary;
-  }
   &:hover,
   &:active {
-    filter: brightness(1.2);
+    filter: brightness(1.03);
     box-shadow: 0 .5rem 1rem rgba(black,.4);
     transform: translateY(-.1rem);
     transition: all .2s;
