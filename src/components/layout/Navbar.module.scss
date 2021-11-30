@@ -2,7 +2,10 @@
 .navbar{
     background-color: $color-primary;
     display: flex;
-    position: fixed;
+    grid-column: 1/-1;
+    height: 10vh;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 1rem 3rem;
     justify-content: space-between;

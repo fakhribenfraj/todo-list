@@ -1,0 +1,12 @@
+@import "../variables.scss";
+
+.main {
+  padding-top: 10vh;
+  z-index: 0;
+  display: flex;
+  max-height: 100vh;
+  overflow: hidden;
+}
+.modals {
+  z-index: 10;
+}

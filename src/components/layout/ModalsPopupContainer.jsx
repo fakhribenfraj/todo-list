@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { modalActions } from "../../store/modal/modal-slice";
 import AddTaskForm from "../todos/AddTaskForm";
 import ModalPopup from "../UI/ModalPopup";
-import classes from "./ModalsPupupContainer.module.scss";
-const ModalsPupupContainer = () => {
+import classes from "./ModalsPopupContainer.module.scss";
+const ModalsPopupContainer = () => {
   const modalStore = useSelector((state) => state.modal);
   const dispatch = useDispatch();
   const closeAddModalHandler = () => {
@@ -23,4 +23,4 @@ const ModalsPupupContainer = () => {
     </div>
   );
 };
-export default ModalsPupupContainer;
+export default ModalsPopupContainer;

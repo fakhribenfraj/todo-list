@@ -1,0 +1,53 @@
+@import "../../variables.scss";
+.sideBar {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem 1.5rem;
+  transition: padding 0.2s;
+  background-color: rgba(rgb(189, 189, 189), 0.1);
+  z-index: 4;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: $color-text-primary;
+    width: 100%;
+    h3 {
+      border-bottom: 0.2rem solid gray;
+      padding-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      li {
+        padding: 0 1rem;
+        font-size: 2rem;
+      }
+    }
+    .icon {
+      font-size: 3rem;
+      color: $color-primary-light;
+    }
+  }
+}
+.link {
+  font-size: 2rem;
+  color: $color-text-primary;
+  width: max-content;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__title {
+    padding: 0 1rem;
+  }
+}
+.options{
+width: 100%;
+padding-top: 1rem;
+}
